@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Anta", sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #847996;
+}
+
+.container{
+    width: 500px;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 19px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F4ECD6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.35), 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+h2{
+    color: #310A31;
+}
+
+.result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A7CAB1;
+    height: 64px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    color: #310A31;
+    font-size: 24px;
+}
+
+.copy-icon > i{
+    font-size: 30px;
+    color: #310A31;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.2s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #F4ECD6;
+    color: #310A31;
+    font-size: 18px;
+    position: absolute;
+    padding: 1px 5px 2px 5px;
+    bottom: -1.9em;
+    left: 100%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    position: relative;
+}
+
+.copy-icon > i:hover{
+    color: #F4ECD6;   
+}
+
+.length-title{
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #310A31;
+}
+
+.length{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.length-range::before, .length-range::after{
+    position: absolute;
+}
+
+.length::before{
+    content: attr(data-min);
+    left: 0;
+    color: #310A31;
+}
+
+.length::after{
+    content: attr(data-max);
+    right: 0;
+    color: #310A31;
+}
+
+.range-slider{
+    width: 80%;
+    margin: 0 8px; 
+    background: #310A31;
+    outline: none; 
+    opacity: 0.7; 
+    transition: .2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.range-slider:hover{
+    opacity: 1;
+}
+
+.setting-title{
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #310A31;
+}
+
+.option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #88B7B5;
+    margin: 12px 0;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    color: #310A31;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 65px;
+    height: 37px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border: 1px solid #918d91;
+    -webkit-transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #F4ECD6;
+    transition: .4s;
+    -webkit-transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #58996a;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #58996a;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 50px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.generate-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.generate-btn > button{
+    padding: 16px 30px;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #A7CAB1;
+    color: #310A31;
+    border: 2px dashed #310A31;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.generate-btn > button:hover{
+    transition: .4s;
+    border: 2px dashed #8eb499;
+    background-color: #F4ECD6;
+    color: #8eb499;
+}
+
+.generate-btn > button:active {
+    background-color: #A7CAB1;
+    transition: .2s;
+}
+   

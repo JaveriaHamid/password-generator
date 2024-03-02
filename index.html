@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ae846c5386.js" crossorigin="anonymous"></script>
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Password Generator</h2>
+        <div class="result">
+           <div class="password"></div>
+           <div class="copy-icon" data-title="copy">
+              <i class="fa-regular fa-copy"></i>
+           </div>
+        </div>
+        <div class="length-desc">
+            <div class="length-title" for="myRange">Length Range: <span id="rangeLength">8</span></div>
+            <div class="length length-range" data-min="4" data-max="20">
+                <input type="range" id="myRange" min="4" max="20" value="8" step="1" class="range-slider">
+            </div>
+        </div>
+        <div class="options">
+            <div class="setting-title">Settings</div>
+            <div class="option">
+                <span>Include Numbers</span>
+                <span class="toggle">
+                    <label class="switch" for="numbers">
+                        <input type="checkbox" name="numbers" id="numbers" checked/>
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+            </div>
+            <div class="option">
+                <span>Include Lowercase</span>
+                <span class="toggle">
+                    <label class="switch" for="lowercase">
+                        <input type="checkbox" name="lowercase" id="lowercase" checked/>
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+            </div>
+            <div class="option">
+                <span>Include Uppercase</span>
+                <span class="toggle">
+                    <label class="switch" for="uppercase">
+                        <input type="checkbox" name="uppercase" id="uppercase" checked/>
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+            </div>
+            <div class="option">
+                <span>Include Symbols</span>
+                <span class="toggle">
+                    <label class="switch" for="symbols">
+                        <input type="checkbox" name="symbols" id="symbols" checked/>
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+            </div>
+        </div>
+        <div class="generate-btn">
+            <button>Generate Password</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
