@@ -6,7 +6,6 @@ const numbers = document.getElementById("numbers");
 const uppercase = document.getElementById("uppercase");
 const lowercase = document.getElementById("lowercase");
 const symbols = document.getElementById("symbols");
-const toggleBtns = document.querySelectorAll(".toggle");
 const generatePassBtn = document.querySelector(".generate-btn > button");
 
 let num = '0123456789';
@@ -14,13 +13,25 @@ let upperC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let lowerC = 'abcdefghijklmnopqrstuvwxyz';
 let symb = '~!@#$%^&*';
 
+//  Function to generate a random password (main function) 
+const generatePassword = () => {
+    let str = "";
+    let getPass = "";
 
-// rangeLength.textContent = rangeSlider.value;
+    str += numbers.checked ? num : ""
+    str += uppercase.checked ? upperC : "";
+    str += lowercase.checked ? lowerC : "";
+    str += symbols.checked ? symb : "";
 
-// Set Length Range according to Range Slider
-rangeSlider.addEventListener('input', () =>{
-    rangeLength.textContent = rangeSlider.value;
-});
+    if(str === ""){
+        alert("Please select at least one option");
+    }
+
+    for(i = 1; i <= rangeSlider.value; i++){
+         getPass += str.charAt(Math.floor(Math.random() * str.length));
+    }
+    return getPass;  
+}
 
 
 //  Function to copy generated password
@@ -38,38 +49,13 @@ copyPassword.addEventListener('click', ()=>{
 });
 
 
+// Set Length Range according to Range Slider
+rangeSlider.addEventListener('input', () =>{
+    rangeLength.textContent = rangeSlider.value;
+});
+
+
 //  Function to make a Generate-Password-Button clickable and display result on the Result container
 generatePassBtn.addEventListener('click', ()=>{
     result.textContent = generatePassword();   
 });
-
-
-//  Function to generate a random password (main function) 
-const generatePassword = () => {
-    let str = "";
-    let getPass = "";
-
-    str += numbers.checked ? num : "";
-    str += uppercase.checked ? upperC : "";
-    str += lowercase.checked ? lowerC : "";
-    str += symbols.checked ? symb : "";
-
-    for(i = 1; i <= rangeSlider.value; i++){
-       getPass += str.charAt(Math.floor(Math.random() * str.length));
-    }
-    return getPass;
-}
-
-
-
-//  Set checked and unchecked attribute 
-// toggleBtns.forEach(toggleBtn => toggleBtn.addEventListener('input', (e) => {
-//     let tBtn = e.target;
-//     console.log(tBtn); 
-//     if(tBtn.checked){
-//         console.log("checked");
-//     }else if(!tBtn.checked){
-//         console.log("unchecked");
-//     }
-// }));
-
